@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+<title>{{ name }} | Calendar of Faerun!</title>
+
+<body>
+    <a href="/" &larr; Back to the Year View</a>
+        <h1>{{month}}</h1>
+
+        <div class="tendays">
+            <h4>First Tenday</h4>
+            <ol>
+                {% for day in range(1, 11) %}
+                <li>Day {{day}}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="tendays">
+            <h4>Second tendays </h4>
+            <ol start="11">
+                {% for day in range(11, 21) %}
+                <li>Day {{day}}</li>
+                {% endfor %}
+            </ol>
+        </div>
+
+        <div class="tendays">
+            <h4>Third Tenday</h4>
+            <ol start="21">
+                {% for day in range(21, 31) %}
+                <li>Day {{day}}</li>
+                {% endfor %}
+            </ol>
+        </div>
+</body>
+
+</html>
