@@ -6,13 +6,13 @@ app = Flask(__name__)
 
 # Define a route for the home page
 @app.route("/")
-def index():
-
+@app.route("/year/<int:year>")
+def index(year=1491):
     all_months = calendar_logic.MONTHS
-
     return render_template(
         'index.html',
         months=all_months,
+        year=year,
     )
 
 @app.route("/month/<month_name>")

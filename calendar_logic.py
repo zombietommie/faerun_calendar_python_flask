@@ -36,3 +36,6 @@ def get_holiday_after_month(month_number):
     """Returns the name of a holiday following a given month number."""
     return HOLIDAYS.get(month_number)
 
+def is_leap_year(year):
+    """Shieldmeet occurs in years divisible by 4."""
+    return year % 4 == 0

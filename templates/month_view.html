@@ -1,11 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
-<meta charset="UTF-8">
-<title>{{ name }} | Calendar of Faerun!</title>
+
+<head>
+    <meta charset="UTF-8">
+    <title>{{ name }} | Calendar of Faerun!</title>
+    <style>
+        .holiday {
+            background-color: burlywood;
+            border: 1px solid black;
+            padding: 10px;
+            margin: 15px 0;
+            text-align: center;
+            font-size: 1.2em;
+        }
+    </style>
+</head>
 
 <body>
     <a href="/" &larr; Back to the Year View</a>
-        <h1>{{month}}</h1>
+
+        {% if holiday_before %}
+        <div class="holiday">
+            <strong>{{ holiday_before}}</strong>
+        </div>
+        {% endif %}
+
+        <h1>{{name}}</h1>
 
         <div class="tendays">
             <h4>First Tenday</h4>
@@ -33,6 +53,12 @@
                 {% endfor %}
             </ol>
         </div>
+
+        {% if holiday_after %}
+        <div class="holiday">
+            <strong>{{holiday_after}}</strong>
+        </div>
+        {% endif %}
 </body>
 
 </html>
